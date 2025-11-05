@@ -1,0 +1,164 @@
+{
+  "id": "resnet-2015",
+  "category": "deep-learning",
+  "paper": {
+    "title": "Deep Residual Learning for Image Recognition",
+    "authors": ["Kaiming He", "Xiangyu Zhang", "Shaoqing Ren", "Jian Sun"],
+    "year": 2015,
+    "arxivId": "1512.03385",
+    "arxivUrl": "https://arxiv.org/abs/1512.03385",
+    "pdfUrl": "https://arxiv.org/pdf/1512.03385.pdf",
+    "abstract": "We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "ResNetが解決しようとした主な問題は何ですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "過学習",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "勾配消失問題と劣化問題",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "計算コストの削減",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "メモリ使用量の削減",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "ResNetは、ネットワークが深くなるにつれて訓練精度が劣化する問題（劣化問題）と勾配消失問題を解決するために、残差学習（Residual Learning）の概念を導入しました。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "ResNetのResidual Block（残差ブロック）の基本的な仕組みは何ですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "入力をそのまま次の層に渡す",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "入力とネットワークの出力を足し合わせる（ショートカット接続）",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "入力を2つの経路に分割する",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "入力を圧縮してから復元する",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Residual Blockは、入力xを複数の層を通した出力F(x)に加算し、H(x) = F(x) + x という形で出力します。このショートカット接続により、勾配が直接流れやすくなり、深いネットワークの学習が可能になります。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "論文で提案された最も深いResNetのバージョンは何層でしたか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "50層",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "101層",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "152層",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "200層",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "論文では152層のResNet-152が提案されました。これは当時としては非常に深いネットワークでしたが、残差学習により効果的に学習できることが示されました。",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "ResNetがImageNet ILSVRC 2015で達成した成果は？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Top-5エラー率10.2%で2位",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Top-5エラー率3.57%で優勝",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Top-5エラー率5.1%で3位",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Top-5エラー率7.3%で優勝",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "ResNetはImageNet ILSVRC 2015コンペティションでTop-5エラー率3.57%を達成し、優勝しました。この精度は人間の認識精度（約5%）を超えたとされています。",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "Bottleneck Designにおいて、1×1畳み込み層の主な役割は何ですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "画像サイズを縮小する",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "次元削減と次元復元により計算量を削減する",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "特徴マップの空間的な情報を抽出する",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "正則化効果を高める",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bottleneck Designでは、1×1畳み込みで次元を削減し、3×3畳み込みで特徴抽出を行い、再び1×1畳み込みで次元を復元します。これにより計算量とパラメータ数を大幅に削減できます。",
+      "difficulty": "advanced"
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedTime": 20,
+  "createdAt": "2024-01-01T00:00:00Z",
+  "updatedAt": "2024-01-01T00:00:00Z"
+}

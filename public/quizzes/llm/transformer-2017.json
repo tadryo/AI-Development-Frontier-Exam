@@ -1,0 +1,193 @@
+{
+  "id": "transformer-2017",
+  "category": "llm",
+  "paper": {
+    "title": "Attention Is All You Need",
+    "authors": ["Ashish Vaswani", "Noam Shazeer", "Niki Parmar", "Jakob Uszkoreit", "Llion Jones", "Aidan N. Gomez", "Lukasz Kaiser", "Illia Polosukhin"],
+    "year": 2017,
+    "arxivId": "1706.03762",
+    "arxivUrl": "https://arxiv.org/abs/1706.03762",
+    "pdfUrl": "https://arxiv.org/pdf/1706.03762.pdf",
+    "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "Transformerアーキテクチャの最大の特徴は何ですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "RNN（再帰型ニューラルネットワーク）を使用している",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "CNNのみで構成されている",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Attentionメカニズムのみで構成されている",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "LSTM層を複数積み重ねている",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Transformerは「Attention Is All You Need」というタイトルが示す通り、RNNやCNNを使わず、Attentionメカニズムのみで構成されています。これにより並列化が容易になり、学習効率が大幅に向上しました。",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "Transformerで使用される「Multi-Head Attention」のHeadの数は論文では何個でしたか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "4個",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "8個",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "12個",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "16個",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "論文では8個のHeadを持つMulti-Head Attentionが使用されました。複数のHeadを使用することで、異なる表現部分空間から情報を学習できます。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "Transformerで系列の順序情報を与えるために使用される技術は何ですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Time Embedding",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Positional Encoding",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Sequence Tagging",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Order Vector",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "TransformerではPositional Encodingを使用して系列の順序情報を与えます。RNNのように順次処理しないため、位置情報を明示的に追加する必要があります。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "Self-Attentionの計算において、Query、Key、Valueのベクトルは何から作られますか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "それぞれ異なる入力から",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "同じ入力を線形変換して",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "事前に学習された埋め込みから",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "前の層の出力のみから",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Self-Attentionでは、同じ入力系列を異なる重み行列で線形変換することで、Query、Key、Valueのベクトルを生成します。これにより、入力系列内の各要素間の関係性を学習できます。",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "Transformerのエンコーダー・デコーダーそれぞれの層数は論文では何層でしたか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "4層",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "6層",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "8層",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "12層",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "論文のベースモデルでは、エンコーダーとデコーダーはそれぞれ6層のスタックで構成されています。各層にはMulti-Head AttentionとFeed-Forwardネットワークが含まれます。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "Scaled Dot-Product Attentionでスケーリングファクター（√dₖ）で割る理由は何ですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "計算速度を上げるため",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "内積の値が大きくなりすぎてsoftmaxの勾配が小さくなるのを防ぐため",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "過学習を防ぐため",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "メモリ使用量を削減するため",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "次元数が大きくなると内積の値も大きくなり、softmax関数の勾配が非常に小さくなる領域に入ってしまいます。√dₖでスケーリングすることで、この問題を防ぎ、学習を安定させます。",
+      "difficulty": "advanced"
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedTime": 30,
+  "createdAt": "2024-01-01T00:00:00Z",
+  "updatedAt": "2024-01-01T00:00:00Z"
+}

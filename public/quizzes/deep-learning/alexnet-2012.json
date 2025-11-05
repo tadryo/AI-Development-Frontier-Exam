@@ -1,0 +1,164 @@
+{
+  "id": "alexnet-2012",
+  "category": "deep-learning",
+  "paper": {
+    "title": "ImageNet Classification with Deep Convolutional Neural Networks",
+    "authors": ["Alex Krizhevsky", "Ilya Sutskever", "Geoffrey Hinton"],
+    "year": 2012,
+    "arxivId": "",
+    "arxivUrl": "https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks",
+    "pdfUrl": "https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf",
+    "abstract": "We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSVRC-2010 contest into the 1000 different classes."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "AlexNetの畳み込み層は何層ありますか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "3層",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "5層",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "7層",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "9層",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "AlexNetは5つの畳み込み層と3つの全結合層から構成されています。この深い構造により、複雑な特徴を学習することが可能になりました。",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "AlexNetで過学習を防ぐために使用された技術として正しくないものはどれですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dropout",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Data Augmentation",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Batch Normalization",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "L2正則化",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Batch NormalizationはAlexNetの論文発表後に提案された技術です。AlexNetではDropout、Data Augmentation、L2正則化が使用されました。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "AlexNetで活性化関数として使用されたものは何ですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sigmoid",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Tanh",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ReLU",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Softmax",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "AlexNetではReLU（Rectified Linear Unit）が活性化関数として使用されました。ReLUはSigmoidやTanhよりも高速に学習でき、勾配消失問題を軽減します。",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "AlexNetのトレーニングで使用されたGPUの数は？",
+      "options": [
+        {
+          "id": "a",
+          "text": "1個",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "2個",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "4個",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "8個",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "AlexNetは2つのNVIDIA GTX 580 GPUを使用して並列学習されました。これは当時の深層学習におけるGPU活用の先駆けとなりました。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "AlexNetがImageNet ILSVRC-2012で達成したTop-5エラー率は約何パーセントでしたか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "約10%",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "約15%",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "約20%",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "約25%",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "AlexNetはImageNet ILSVRC-2012コンペティションでTop-5エラー率15.3%を達成し、2位（26.2%）を大きく引き離しました。これは深層学習の優位性を示す歴史的な成果でした。",
+      "difficulty": "advanced"
+    }
+  ],
+  "difficulty": "intermediate",
+  "estimatedTime": 15,
+  "createdAt": "2024-01-01T00:00:00Z",
+  "updatedAt": "2024-01-01T00:00:00Z"
+}

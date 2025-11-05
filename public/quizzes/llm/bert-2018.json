@@ -1,0 +1,193 @@
+{
+  "id": "bert-2018",
+  "category": "llm",
+  "paper": {
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": ["Jacob Devlin", "Ming-Wei Chang", "Kenton Lee", "Kristina Toutanova"],
+    "year": 2018,
+    "arxivId": "1810.04805",
+    "arxivUrl": "https://arxiv.org/abs/1810.04805",
+    "pdfUrl": "https://arxiv.org/pdf/1810.04805.pdf",
+    "abstract": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "BERTの最大の特徴は何ですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "一方向（left-to-right）の言語モデル",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "双方向（bidirectional）の文脈を考慮した事前学習",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "RNNベースのアーキテクチャ",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "教師なし学習のみで学習",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "BERTは双方向のTransformer Encoderを使用し、文脈の左右両方向から情報を取得できます。これにより、より深い言語理解が可能になりました。",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "BERTの事前学習で使用される2つのタスクは何ですか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "機械翻訳と質問応答",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Masked Language Model (MLM) と Next Sentence Prediction (NSP)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "文書分類と固有表現認識",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "要約と生成",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "BERTの事前学習では、Masked Language Model（マスクされた単語の予測）とNext Sentence Prediction（2つの文が連続しているかの予測）という2つのタスクが使用されます。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "Masked Language Model (MLM)では、入力トークンの何パーセントがマスクされますか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "5%",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "10%",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "15%",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "20%",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "BERTのMLMでは、入力トークンの15%がランダムにマスクされます。このうち80%が[MASK]トークンに、10%がランダムなトークンに、10%がそのままの状態で保たれます。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "BERT-Baseモデルの隠れ層のサイズは？",
+      "options": [
+        {
+          "id": "a",
+          "text": "512",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "768",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "1024",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "2048",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "BERT-Baseは12層、隠れ層サイズ768、12個のAttention Headを持ちます。BERT-Largeは24層、隠れ層サイズ1024、16個のAttention Headです。",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "BERTが従来の言語モデル（GPTなど）と比較して優れている点は？",
+      "options": [
+        {
+          "id": "a",
+          "text": "パラメータ数が少ない",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "学習速度が速い",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "双方向の文脈を同時に学習できる",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "事前学習が不要",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "GPTのような一方向モデルは左から右（または右から左）の文脈しか考慮できませんが、BERTは双方向のTransformer Encoderにより、左右両方の文脈を同時に学習できます。",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "BERTの入力表現は何で構成されていますか？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Token Embeddingsのみ",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Token Embeddings + Segment Embeddings",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Token Embeddings + Segment Embeddings + Position Embeddings",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Word Embeddings + Character Embeddings",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "BERTの入力表現は、Token Embeddings（単語の埋め込み）、Segment Embeddings（文A/Bの区別）、Position Embeddings（位置情報）の3つの埋め込みの合計で構成されます。",
+      "difficulty": "advanced"
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedTime": 25,
+  "createdAt": "2024-01-01T00:00:00Z",
+  "updatedAt": "2024-01-01T00:00:00Z"
+}
