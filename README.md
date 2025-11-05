@@ -98,15 +98,43 @@ npm run build
 
 ### GitHub Pagesへのデプロイ
 
-1. GitHubリポジトリの Settings > Pages に移動
-2. Source を "GitHub Actions" に設定
-3. mainブランチにプッシュすると自動デプロイ
+#### 事前準備
+1. GitHubで新しいリポジトリを作成
+2. ローカルで以下を実行:
+
+```bash
+git init
+git add .
+git commit -m "feat: 初期リリース"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/AI-Development-Frontier-Exam.git
+git push -u origin main
+```
+
+#### GitHub Pagesの有効化
+1. GitHubリポジトリの **Settings** > **Pages** に移動
+2. **Source** を **"GitHub Actions"** に設定（重要: "Deploy from a branch" ではない）
+3. **Settings** > **Actions** > **General** に移動
+4. **Workflow permissions** を **"Read and write permissions"** に設定
+5. 変更を保存
+
+#### デプロイ実行
+設定完了後、mainブランチにプッシュすると自動デプロイされます:
 
 ```bash
 git add .
-git commit -m "Initial commit"
+git commit -m "docs: デプロイ設定を追加"
 git push origin main
 ```
+
+または、**Actions** タブから **Run workflow** で手動実行も可能です。
+
+デプロイ完了後、以下のURLでアクセス可能:
+```
+https://YOUR_USERNAME.github.io/AI-Development-Frontier-Exam/
+```
+
+詳細な手順は `DEPLOYMENT_GUIDE.md` を参照してください。
 
 ## クイズデータの追加
 

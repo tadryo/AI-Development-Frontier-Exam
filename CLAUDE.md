@@ -155,38 +155,51 @@ AI-Development-Frontier-Exam/
 - カテゴリごとにディレクトリ分け
 - ファイル名は `{id}.json` 形式
 
-## 依存関係の問題
+## GitHub Pagesデプロイ手順
 
-現在、npm installに問題が発生しています：
-- npmキャッシュの権限エラー
-- 解決策: `sudo chown -R 501:20 "/Users/tatenumaryoya/.npm"` を実行
+### 必須設定
+
+1. **リポジトリ設定**
+   - Settings > Pages > Source: "GitHub Actions" を選択
+   - Settings > Actions > General > Workflow permissions: "Read and write permissions"
+
+2. **デプロイ実行**
+   ```bash
+   git add .
+   git commit -m "feat: 初期リリース"
+   git push origin main
+   ```
+
+3. **確認**
+   - Actions タブでワークフロー実行を確認
+   - デプロイURL: `https://USERNAME.github.io/AI-Development-Frontier-Exam/`
+
+詳細は `DEPLOYMENT_GUIDE.md` を参照。
 
 ## 次のステップ
 
-1. **npm依存関係の解決**
-   - npmキャッシュの権限修正
-   - 正常にインストール完了
+1. **追加のクイズデータ作成**
+   - GAN (Deep Learning)
+   - VGG (Deep Learning)
+   - GPT (LLM)
+   - LLaMA (LLM)
 
-2. **個別クイズページの実装**
-   - 動的ルーティング
-   - JSONデータの読み込み
-   - クイズ実施機能
+2. **バッジシステムの完全実装**
+   - スコアに応じた自動バッジ付与
+   - バッジ表示の改善
 
-3. **クイズ結果の保存**
-   - LocalStorage使用
-   - 結果ページの実装
+3. **AI質問機能の実装**
+   - Gemini API連携
+   - ChatGPT API連携
 
-4. **追加のクイズデータ作成**
-   - ResNet
-   - GAN
-   - BERT
-   - GPT
-   - LLaMA
+4. **ユーザー認証**
+   - Firebase Authentication
+   - プロフィール管理
 
-5. **デプロイとテスト**
-   - GitHub Pagesへデプロイ
-   - 実機テスト
-   - パフォーマンス最適化
+5. **パフォーマンス最適化**
+   - 画像最適化
+   - コード分割
+   - キャッシング戦略
 
 ## 更新履歴
 
@@ -230,3 +243,8 @@ AI-Development-Frontier-Exam/
   - 「回答する」→「解説表示」→「次の問題へ」のフロー改善
   - 解説表示後に「やり直す」と「次の問題へ」の2択を表示
   - 最終問題では「結果を見る」ボタンを表示
+- ✅ Faviconの設定
+  - 動的アイコン生成（`app/icon.tsx`）
+  - 🧠絵文字とグラデーション背景
+  - Apple用アイコン（`app/apple-icon.tsx`）
+  - メタデータでアイコン指定
